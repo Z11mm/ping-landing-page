@@ -45,13 +45,22 @@ div.image-board {
   margin-bottom: 5rem;
 }
 
-.form input {
+.form input:required {
   width: 60%;
   padding: 12px 20px;
   border-radius: 60px;
   border: 1px solid hsl(223, 100%, 88%);
   margin-bottom: 0.5rem;
+  outline: none;
 }
+
+/* .form input:invalid {
+  border: 1px solid hsl(354, 100%, 66%);
+}
+
+.form input:valid {
+  border: 1px solid rgb(63, 240, 47);
+} */
 
 ::placeholder {
   color: hsl(223, 100%, 88%);
@@ -68,6 +77,12 @@ button {
   background-color: hsl(223, 87%, 63%);
   box-shadow: 0 3px 6px hsla(234, 36%, 76%, 0.3),
     0 6px 9px hsla(234, 36%, 76%, 0.3);
+    outline: none;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: hsl(223, 83%, 72%);
 }
 
 div.image-board {
@@ -127,7 +142,7 @@ small {
   .form input {
     margin: 5px 10px 5px 0;
     width: 40%;
-  } 
+  }
 
   button {
     width: 20%;
