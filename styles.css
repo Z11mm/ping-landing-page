@@ -66,9 +66,9 @@ div.image-board {
   visibility: visible;
 }
 
-/* .form input:valid {
+.form input.valid {
   border: 1px solid rgb(63, 240, 47);
-} */
+}
 
 ::placeholder {
   color: hsl(223, 100%, 88%);

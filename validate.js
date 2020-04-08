@@ -42,12 +42,12 @@ const showError = (field, error) => {
   field.classList.add('error');
 
   // Get field id or name
-  var id = field.id || field.name;
+  const id = field.id || field.name;
   if (!id) return;
 
   // Check if error message field already exists
   // If not, create one
-  var message = field.form.querySelector('.error-message#error-for-' + id);
+  let message = field.form.querySelector('.error-message#error-for-' + id);
   if (!message) {
     message = document.createElement('div');
     message.className = 'error-message';
@@ -62,6 +62,31 @@ const showError = (field, error) => {
   message.textContent = error;
 };
 
+// Rempve errors
+const removeError = field => {
+  // Remove error class to field
+  field.classList.remove('error');
+
+  // Remove ARIA role from the field
+  field.removeAttribute('aria-describedby');
+
+  // Get field id or name
+  const id = field.id || field.name;
+  if (!id) return;
+
+  // Check if an error message is in the DOM
+  const message = field.form.querySelector(
+    '.error-message#error-for-' + id + ''
+  );
+  if (message) {
+    field.classList.add('valid');
+    message.textContent = '';
+    message.style.display = 'none';
+    message.style.visibility = 'hidden';
+  }
+  field.classList.add('valid');
+};
+
 // listen for blur events
 emailField.addEventListener(
   'blur',
@@ -71,7 +96,9 @@ emailField.addEventListener(
 
     // validate the field
     const error = hasError(event.target);
-    showError(emailField, error);
+    if (error) {
+      showError(emailField, error);
+    }
   },
   true
 );
@@ -83,6 +110,9 @@ document.querySelector('button').addEventListener(
     if (emailField.value === '') {
       const error = hasError(emailField);
       showError(emailField, error);
+    }
+    if (!hasError(emailField)) {
+      removeError(emailField);
     }
   },
   true
