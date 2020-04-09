@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Libre+Franklin:300,600,700&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Libre+Franklin:300,600,700&display=swap');
 
 /* Mobile styles */
 * {
@@ -8,7 +8,7 @@
 }
 
 body {
-  font-family: "Libre Franklin", sans-serif;
+  font-family: 'Libre Franklin', sans-serif;
   font-size: 20px;
   min-height: 100vh;
   max-width: 50rem;
@@ -85,7 +85,7 @@ button {
   background-color: hsl(223, 87%, 63%);
   box-shadow: 0 3px 6px hsla(234, 36%, 76%, 0.3),
     0 6px 9px hsla(234, 36%, 76%, 0.3);
-    outline: none;
+  outline: none;
 }
 
 button:hover {
@@ -94,7 +94,7 @@ button:hover {
 }
 
 div.image-board {
-  content: url("./images/illustration-dashboard.png");
+  content: url('./images/illustration-dashboard.png');
   max-width: 80%;
   margin-right: auto;
   margin-left: auto;
@@ -150,6 +150,17 @@ small {
   .form input {
     margin: 5px 10px 5px 0;
     width: 40%;
+  }
+
+  .form.validate {
+    position: relative;
+  }
+
+  .error-message {
+    position: absolute;
+    right: 25%;
+    width: 40%;
+    text-align: left;
   }
 
   button {

@@ -115,5 +115,5 @@ document.querySelector('button').addEventListener(
       removeError(emailField);
     }
   },
-  true
+  false
 );
