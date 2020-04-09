@@ -19,13 +19,10 @@ const hasError = field => {
   // Get validity
   const validity = field.validity;
 
-  // If valid, return null
   if (validity.valid) return;
 
-  // If field is required and empty
   if (validity.valueMissing) return 'Please fill out this field.';
 
-  // If not the right type
   if (validity.typeMismatch) {
     if (field.type === 'email')
       // Email
@@ -38,10 +35,8 @@ const hasError = field => {
 
 // Show the error message
 const showError = (field, error) => {
-  // Add error class to field
   field.classList.add('error');
 
-  // Get field id or name
   const id = field.id || field.name;
   if (!id) return;
 
@@ -55,22 +50,17 @@ const showError = (field, error) => {
     field.parentNode.insertBefore(message, field.nextSibling);
   }
 
-  // Add ARIA role to the field
   field.setAttribute('aria-describedby', 'error-for-' + id);
 
-  // Update error message
   message.textContent = error;
 };
 
 // Rempve errors
 const removeError = field => {
-  // Remove error class to field
   field.classList.remove('error');
 
-  // Remove ARIA role from the field
   field.removeAttribute('aria-describedby');
 
-  // Get field id or name
   const id = field.id || field.name;
   if (!id) return;
 
