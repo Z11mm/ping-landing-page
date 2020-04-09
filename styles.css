@@ -103,10 +103,11 @@ div.image-board {
   background-repeat: no-repeat;
 }
 
-section.social-media-icons {
+div.social-media-icons {
   display: flex;
   justify-content: center;
   margin-top: 8rem;
+  margin-bottom: 1.5rem;
 }
 
 .social-media-icons div {

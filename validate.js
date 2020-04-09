@@ -89,8 +89,7 @@ emailField.addEventListener(
     if (error) {
       showError(emailField, error);
     }
-  },
-  true
+  }
 );
 
 document.querySelector('button').addEventListener(
@@ -104,6 +103,5 @@ document.querySelector('button').addEventListener(
     if (!hasError(emailField)) {
       removeError(emailField);
     }
-  },
-  false
+  }
 );
