@@ -123,6 +123,10 @@ div.social-media-icons {
   line-height: 21px;
 }
 
+.social-media-icons div a {
+  color: hsl(223, 87%, 63%);
+}
+
 small {
   color: hsl(0, 0%, 59%);
 }
