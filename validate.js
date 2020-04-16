@@ -3,7 +3,6 @@ const emailField = document.querySelector('input[type="email"]');
 /* disable native form validation in js so that if script fails,
   native validation kicks in */
 const form = document.querySelector('.validate');
-form.setAttribute('novalidate');
 
 // Validate the field
 const hasError = field => {
